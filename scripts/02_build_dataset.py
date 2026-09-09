@@ -1,4 +1,4 @@
-"""
+﻿"""
 Build traffic_data.npz for ProposedTrafficCLIP.
 
 Reads raw pcap/7z files already downloaded by 01_download_pcap_data.py
@@ -83,13 +83,31 @@ def process_class(class_name, raw_data_dir, max_flows_per_class):
 
         flows = extract_flows(packets)
 
-        for flow_packets in flows.values():
+        multi_packet_flows = [f for f in flows.values() if len(f) >= 2]
+
+        if multi_packet_flows:
+            flow_groups = multi_packet_flows
+        else:
+            # Fallback: this pcap has no recoverable multi-packet flow
+            # structure (e.g. per-packet IP anonymization with no
+            # exploitable inter-packet timing gaps -- seen in this
+            # dataset's Facetime capture). Treat each packet as its own
+            # single-packet flow so the class can still be included.
+            # This is a documented deviation from the standard multi-packet
+            # flow methodology used by every other class -- see report.
+            logging.warning(
+                f"[{class_name}] No multi-packet flows found in "
+                f"{os.path.basename(pcap_path)} -- falling back to "
+                f"single-packet flow images for this file."
+            )
+            flow_groups = [
+                [packet] for packet in packets if packet.haslayer("IP")
+            ]
+
+        for flow_packets in flow_groups:
 
             if len(images) >= max_flows_per_class:
                 break
-
-            if len(flow_packets) < 2:
-                continue
 
             try:
                 image = packets_to_image(flow_packets)
