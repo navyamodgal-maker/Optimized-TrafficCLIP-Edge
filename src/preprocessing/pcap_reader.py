@@ -1,5 +1,5 @@
-from scapy.utils import RawPcapReader
-from scapy.layers.l2 import Ether
+﻿from scapy.utils import RawPcapReader
+from scapy.all import Ether
 
 
 def read_pcap(path):
