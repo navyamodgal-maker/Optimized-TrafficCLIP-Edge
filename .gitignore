@@ -1,0 +1,8 @@
+﻿data/
+output/
+__pycache__/
+*.pyc
+*.npz
+*.pth
+*.pt
+.ipynb_checkpoints/
