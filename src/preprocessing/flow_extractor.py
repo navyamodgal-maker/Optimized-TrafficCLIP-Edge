@@ -1,4 +1,4 @@
-from collections import defaultdict
+ from collections import defaultdict
 
 
 def get_flow_key(packet):
@@ -29,6 +29,16 @@ def get_flow_key(packet):
     elif packet.haslayer("UDP"):
         src_port = packet["UDP"].sport
         dst_port = packet["UDP"].dport
+
+    # Normalize direction: without this, a request (A->B) and its response
+    # (B->A) get different keys, so almost every "flow" ends up being a
+    # single packet and gets dropped downstream (min 2 packets required).
+    endpoint_a = (src_ip, src_port if src_port is not None else -1)
+    endpoint_b = (dst_ip, dst_port if dst_port is not None else -1)
+
+    if endpoint_a > endpoint_b:
+        src_ip, dst_ip = dst_ip, src_ip
+        src_port, dst_port = dst_port, src_port
 
     return (
         src_ip,
