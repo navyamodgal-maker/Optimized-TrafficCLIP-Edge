@@ -1,4 +1,4 @@
- from collections import defaultdict
+﻿from collections import defaultdict
 
 
 def get_flow_key(packet):
