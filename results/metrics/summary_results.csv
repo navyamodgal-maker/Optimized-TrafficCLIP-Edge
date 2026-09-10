@@ -1,0 +1,9 @@
+metric,value
+closed_set_accuracy,0.9963
+closed_set_macro_f1,0.9963
+closed_set_macro_precision,0.9963
+closed_set_macro_recall,0.9963
+open_set_roc_auc,0.8895
+qat_fp32_baseline,0.9963
+qat_naive_fake_quant,0.9963
+qat_finetuned,0.9985

@@ -1,8 +1,7 @@
-﻿data/
-output/
+data/
+output/*.pth
+output/*.pt
+output/*.npz
 __pycache__/
 *.pyc
-*.npz
-*.pth
-*.pt
 .ipynb_checkpoints/
