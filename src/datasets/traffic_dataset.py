@@ -169,9 +169,17 @@ class TrafficDataset(Dataset):
 
         label = self.labels[idx]
 
-        class_name = self.class_names[
-            label.item()
-        ]
+        # --------------------------------------------------
+        # NOTE: class_name is intentionally NOT looked up /
+        # used here. It used to be interpolated directly into
+        # text_description below (e.g. "...of class Zeus...").
+        # That leaked the ground-truth label straight into the
+        # text modality that the model is trained to classify
+        # from, which is why accuracy was near-perfect
+        # regardless of the image/stats quality. The text
+        # branch must only ever describe observable per-flow
+        # signal (the 8 statistics), never the label.
+        # --------------------------------------------------
 
         # --------------------------------------------------
         # Get 8 statistics
@@ -191,7 +199,7 @@ class TrafficDataset(Dataset):
         ) = stats_values
 
         # --------------------------------------------------
-        # Dynamic text prompt
+        # Dynamic text prompt (label-free)
         # --------------------------------------------------
 
         if (
@@ -201,8 +209,7 @@ class TrafficDataset(Dataset):
 
             text_description = (
                 f"A network traffic gray photo "
-                f"of class {class_name} with "
-                f"{mean_iat:.2f}ms mean IAT, "
+                f"with {mean_iat:.2f}ms mean IAT, "
                 f"{iat_variance:.2f} IAT variance, "
                 f"{jitter:.2f}ms jitter, "
                 f"{entropy:.2f} byte entropy, "
@@ -217,8 +224,8 @@ class TrafficDataset(Dataset):
         else:
 
             text_description = (
-                f"A network traffic gray photo "
-                f"of class {class_name}."
+                "A network traffic gray photo "
+                "of an unlabeled flow."
             )
 
         # --------------------------------------------------
@@ -265,7 +272,11 @@ class TrafficDataset(Dataset):
 
             "raw_text": text_description,
 
-            "class_name": class_name
+            # Still exposed for logging/plotting/debugging use
+            # (confusion matrices, per-class reports, etc.) —
+            # this is fine since it's read AFTER the model has
+            # already produced its prediction, not fed into it.
+            "class_name": self.class_names[label.item()]
         }
 
 
