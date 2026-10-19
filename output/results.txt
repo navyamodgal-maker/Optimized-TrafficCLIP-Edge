@@ -1,0 +1,22 @@
+ProposedTrafficCLIP -- Training & Optimization Summary
+======================================================================
+
+--- train_proposed.py (closed-set, all 10 classes) ---
+Dataset: USTC-TFC2016, 900 flow samples/class, 9,000 total
+Classes: ['Skype', 'MySQL', 'BitTorrent', 'Facetime', 'Weibo', 'Zeus', 'Tinba', 'Cridex', 'Geodo', 'Miuref']
+Epochs: 10 | Batch size: 16
+Split: 70% train / 15% val / 15% test (seed=42)
+
+--- train_proposed.py --open-set (Zeus, BitTorrent held out) ---
+Training samples: 5,040 | Val: 1,080 | Test: 1,080
+Held-out (unknown) classes: ['Zeus', 'BitTorrent']
+
+--- qat_train.py (fusion head only, 5 epochs) ---
+FP32 baseline accuracy              : 0.9963
+Naive fake-quant, no fine-tuning     : 0.9963
+Fake-quant AFTER QAT fine-tuning     : 0.9985
+
+Note: naive fake-quantization showed no accuracy drop from FP32
+in this run, so the post-fine-tuning improvement reflects a few
+additional epochs of fusion-head training rather than recovery
+from a quantization-induced accuracy collapse.

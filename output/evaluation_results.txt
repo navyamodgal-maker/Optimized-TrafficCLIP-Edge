@@ -1,0 +1,52 @@
+ProposedTrafficCLIP TEST RESULTS
+======================================================================
+Test samples: 1350
+Accuracy: 0.9963
+Macro Precision: 0.9963
+Macro Recall: 0.9963
+Macro F1: 0.9963
+
+Classification Report
+======================================================================
+                 precision      recall    f1-score     support
+
+         Skype        1.00        1.00        1.00         135
+         MySQL        1.00        1.00        1.00         135
+    BitTorrent        1.00        1.00        1.00         135
+      Facetime        1.00        1.00        1.00         135
+         Weibo        0.99        1.00        1.00         135
+          Zeus        1.00        0.99        1.00         135
+         Tinba        0.99        0.99        0.99         135
+        Cridex        0.99        1.00        1.00         135
+         Geodo        0.99        1.00        1.00         135
+        Miuref        1.00        0.98        0.99         135
+
+      accuracy                                1.00        1350
+     macro avg        1.00        1.00        1.00        1350
+
+Confusion Matrix
+======================================================================
+Rows = true class, Columns = predicted class, order matches list above
+Classes: ['Skype', 'MySQL', 'BitTorrent', 'Facetime', 'Weibo', 'Zeus', 'Tinba', 'Cridex', 'Geodo', 'Miuref']
+[ 135    0    0    0    0    0    0    0    0    0]
+[   0  135    0    0    0    0    0    0    0    0]
+[   0    0  135    0    0    0    0    0    0    0]
+[   0    0    0  135    0    0    0    0    0    0]
+[   0    0    0    0  135    0    0    0    0    0]
+[   0    0    0    0    1  134    0    0    0    0]
+[   0    0    0    0    0    0  134    0    1    0]
+[   0    0    0    0    0    0    0  135    0    0]
+[   0    0    0    0    0    0    0    0  135    0]
+[   0    0    0    0    0    0    2    1    0  132]
+
+
+Open-Set / Zero-Day Detection
+======================================================================
+Held-out (unknown) classes: ['Zeus', 'BitTorrent']
+ROC-AUC (known vs unknown): 0.8895
+
+Quantization-Aware Training (fusion head)
+======================================================================
+FP32 baseline accuracy              : 0.9963
+Naive fake-quant, no fine-tuning     : 0.9963
+Fake-quant AFTER QAT fine-tuning     : 0.9985
