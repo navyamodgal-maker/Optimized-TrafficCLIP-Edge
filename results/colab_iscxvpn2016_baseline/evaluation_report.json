@@ -1,0 +1,34 @@
+{
+  "project": "TrafficCLIP",
+  "checkpoint": "epoch_3.pth",
+  "test_dataset": "data/splits/test.csv",
+  "test_samples": 1141,
+  "classes": [
+    "AIM_Chat",
+    "Email",
+    "Facebook"
+  ],
+  "accuracy_percent": 58.55,
+  "macro_f1_percent": 50.65,
+  "per_class": {
+    "AIM_Chat": {
+      "precision": 19.03,
+      "recall": 57.33,
+      "f1": 28.57,
+      "support": 75
+    },
+    "Email": {
+      "precision": 98.19,
+      "recall": 49.71,
+      "f1": 66.01,
+      "support": 873
+    },
+    "Facebook": {
+      "precision": 40.38,
+      "recall": 98.96,
+      "f1": 57.36,
+      "support": 193
+    }
+  },
+  "note": "Results from the existing epoch 3 checkpoint; no retraining performed during final evaluation."
+}
