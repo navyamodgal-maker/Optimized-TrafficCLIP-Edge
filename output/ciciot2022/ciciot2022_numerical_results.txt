@@ -1,0 +1,6 @@
+Dataset: CICIoT2022_MFR
+Test samples: 3508
+Accuracy: 0.9230
+Macro Precision: 0.8822
+Macro Recall: 0.8569
+Macro F1: 0.8667

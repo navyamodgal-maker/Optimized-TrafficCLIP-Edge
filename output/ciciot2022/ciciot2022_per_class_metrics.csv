@@ -1,0 +1,11 @@
+class,precision,recall,f1_score,support
+Attacks_Flood,0.9975,0.9963,0.9969,807
+Attacks_Hydra,1.0000,0.8571,0.9231,42
+Attacks_Nmap,1.0000,0.9972,0.9986,718
+Idle,0.8053,0.8362,0.8205,470
+Interactions_Audio,0.8053,0.8844,0.8430,173
+Interactions_Cameras,0.8295,0.7684,0.7978,380
+Interactions_Other,0.6316,0.4286,0.5106,28
+Power_Audio,0.9145,0.9388,0.9265,376
+Power_Cameras,0.9344,0.9323,0.9333,443
+Power_Other,0.9041,0.9296,0.9167,71

@@ -23,7 +23,8 @@ all_statistics_8.csv
 
 # Outputs
 outputs/
-output/
+output/*
+!output/ciciot2022/
 results/
 
 # IDE
