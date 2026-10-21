@@ -1,0 +1,19 @@
+TRAFFICCLIP IMAGE-ONLY MODEL: NUMERICAL RESULTS
+Metrics are percentages; support is the number of samples.
+
+                      precision    recall  f1-score   support
+
+Attacks_Flood              100.00%   100.00%   100.00%      807
+Attacks_Hydra              100.00%    98.00%    99.00%       42
+Attacks_Nmap               100.00%   100.00%   100.00%      718
+Idle                        83.00%    84.00%    84.00%      470
+Interactions_Audio          82.00%    88.00%    85.00%      173
+Interactions_Cameras        84.00%    78.00%    81.00%      380
+Interactions_Other          79.00%    54.00%    64.00%       28
+Power_Audio                 93.00%    95.00%    94.00%      376
+Power_Cameras               93.00%    94.00%    94.00%      443
+Power_Other                 82.00%    93.00%    87.00%       71
+
+accuracy                                      93.00%     3508
+macro avg                   90.00%    88.00%    89.00%     3508
+weighted avg                93.00%    93.00%    93.00%     3508

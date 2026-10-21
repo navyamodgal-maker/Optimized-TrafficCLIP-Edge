@@ -1,0 +1,16 @@
+                      precision    recall  f1-score   support
+
+       Attacks_Flood       1.00      1.00      1.00       807
+       Attacks_Hydra       1.00      0.98      0.99        42
+        Attacks_Nmap       1.00      1.00      1.00       718
+                Idle       0.83      0.84      0.84       470
+  Interactions_Audio       0.82      0.88      0.85       173
+Interactions_Cameras       0.84      0.78      0.81       380
+  Interactions_Other       0.79      0.54      0.64        28
+         Power_Audio       0.93      0.95      0.94       376
+       Power_Cameras       0.93      0.94      0.94       443
+         Power_Other       0.82      0.93      0.87        71
+
+            accuracy                           0.93      3508
+           macro avg       0.90      0.88      0.89      3508
+        weighted avg       0.93      0.93      0.93      3508
