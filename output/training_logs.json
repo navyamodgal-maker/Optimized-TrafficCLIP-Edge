@@ -1,0 +1,176 @@
+{
+  "note": "Transcribed from the Kaggle console output of the 20-class run (10 epochs, batch size 16). Re-running training does not regenerate this file automatically.",
+  "closed_set": [
+    {
+      "epoch": 1,
+      "train_loss": 1.6037,
+      "train_acc": 0.5251,
+      "val_loss": 0.9789,
+      "val_acc": 0.6927
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.903,
+      "train_acc": 0.7011,
+      "val_loss": 0.7389,
+      "val_acc": 0.76
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.713,
+      "train_acc": 0.749,
+      "val_loss": 0.6339,
+      "val_acc": 0.7767
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.6208,
+      "train_acc": 0.7776,
+      "val_loss": 0.5784,
+      "val_acc": 0.768
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.5719,
+      "train_acc": 0.794,
+      "val_loss": 0.5084,
+      "val_acc": 0.8207
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.5323,
+      "train_acc": 0.8037,
+      "val_loss": 0.517,
+      "val_acc": 0.8047
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.4922,
+      "train_acc": 0.8131,
+      "val_loss": 0.4909,
+      "val_acc": 0.818
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.4793,
+      "train_acc": 0.8101,
+      "val_loss": 0.4767,
+      "val_acc": 0.806
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.45,
+      "train_acc": 0.8241,
+      "val_loss": 0.4492,
+      "val_acc": 0.8367
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.4486,
+      "train_acc": 0.8251,
+      "val_loss": 0.4734,
+      "val_acc": 0.8313
+    }
+  ],
+  "open_set": [
+    {
+      "epoch": 1,
+      "train_loss": 1.5697,
+      "train_acc": 0.5408,
+      "val_loss": 0.9316,
+      "val_acc": 0.6859
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.8701,
+      "train_acc": 0.7213,
+      "val_loss": 0.6557,
+      "val_acc": 0.8
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.7006,
+      "train_acc": 0.7567,
+      "val_loss": 0.5541,
+      "val_acc": 0.8007
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.6042,
+      "train_acc": 0.7894,
+      "val_loss": 0.5007,
+      "val_acc": 0.82
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.5427,
+      "train_acc": 0.8098,
+      "val_loss": 0.4888,
+      "val_acc": 0.8348
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.5011,
+      "train_acc": 0.82,
+      "val_loss": 0.4568,
+      "val_acc": 0.8333
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.4702,
+      "train_acc": 0.8254,
+      "val_loss": 0.4657,
+      "val_acc": 0.8259
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.4499,
+      "train_acc": 0.8335,
+      "val_loss": 0.399,
+      "val_acc": 0.8533
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.4164,
+      "train_acc": 0.8433,
+      "val_loss": 0.3814,
+      "val_acc": 0.8563
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.4192,
+      "train_acc": 0.8363,
+      "val_loss": 0.401,
+      "val_acc": 0.8437
+    }
+  ],
+  "closed_set_best_val_acc": 0.8367,
+  "open_set_best_val_acc": 0.8563,
+  "qat": [
+    {
+      "epoch": 1,
+      "train_loss": 0.3424,
+      "val_acc_fake_quant": 0.8373
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.325,
+      "val_acc_fake_quant": 0.8487
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.3086,
+      "val_acc_fake_quant": 0.8453
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.3037,
+      "val_acc_fake_quant": 0.8487
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.2992,
+      "val_acc_fake_quant": 0.8493
+    }
+  ]
+}

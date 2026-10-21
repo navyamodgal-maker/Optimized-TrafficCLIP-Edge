@@ -1,0 +1,13 @@
+torch
+torchvision
+transformers
+scikit-learn
+numpy
+pandas
+pyyaml
+pillow
+scapy
+requests
+py7zr
+seaborn
+matplotlib

@@ -1,0 +1,13 @@
+metric,value
+num_classes,20
+closed_set_accuracy,0.8220
+closed_set_macro_f1,0.8162
+closed_set_macro_precision,0.8482
+closed_set_macro_recall,0.8220
+open_set_roc_auc,0.7712
+qat_fp32_baseline_accuracy,0.8220
+qat_naive_fake_quant_accuracy,0.8213
+qat_finetuned_accuracy,0.8573
+qat_fp32_baseline_macro_f1,
+qat_naive_fake_quant_macro_f1,
+qat_finetuned_macro_f1,

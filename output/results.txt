@@ -1,0 +1,28 @@
+ProposedTrafficCLIP -- Training & Optimization Summary
+======================================================================
+
+--- train_proposed.py (closed-set, all 20 classes) ---
+Dataset: USTC-TFC2016, 20 classes
+Classes: ['Skype', 'MySQL', 'BitTorrent', 'Facetime', 'Weibo', 'Zeus', 'Tinba', 'Cridex', 'Geodo', 'Miuref', 'FTP', 'Gmail', 'Outlook', 'SMB', 'WorldOfWarcraft', 'Htbot', 'Neris', 'Nsis-ay', 'Shifu', 'Virut']
+Epochs: 10 | Batch size: 16
+Split: 70% train / 15% val / 15% test (stratified, seed=42)
+Test samples: 1500 (per-class support: [75])
+Best validation accuracy: 0.8367
+
+--- train_proposed.py --open-set (Zeus, BitTorrent held out) ---
+Known (trained) classes: 18
+Held-out (unknown) classes: ['Zeus', 'BitTorrent']
+Best validation accuracy (known classes): 0.8563
+
+--- qat_train.py (fusion head only, 5 epochs, test set) ---
+FP32 baseline accuracy              : 0.8220  (Macro F1 n/a (re-run qat_train.py))
+Naive fake-quant, no fine-tuning     : 0.8213  (Macro F1 n/a (re-run qat_train.py))
+Fake-quant AFTER QAT fine-tuning     : 0.8573  (Macro F1 n/a (re-run qat_train.py))
+
+Note: naive fake-quantization changed accuracy by less than 0.1 point
+relative to FP32, so there was no quantization-induced collapse to
+recover from. The gain after QAT fine-tuning comes from additional
+epochs of fusion-head training (the FP32 checkpoint was chosen at
+epoch 9 of 10 by validation accuracy) and is not evidence that QAT
+itself improves accuracy. Fake-quantization is also only applied to
+the fusion head's input features, not real INT8 inference.

@@ -1,0 +1,12 @@
+{
+  "num_classes": 20,
+  "split": "test",
+  "fp32_baseline_accuracy": 0.822,
+  "naive_fake_quant_accuracy": 0.8213,
+  "qat_finetuned_accuracy": 0.8573,
+  "fp32_baseline_macro_f1": null,
+  "naive_fake_quant_macro_f1": null,
+  "qat_finetuned_macro_f1": null,
+  "qat_epochs": 5,
+  "note": "Accuracy values transcribed from the Kaggle console output. Macro F1 was not printed by the earlier version of qat_train.py; re-run `python -m src.qat_train` to fill it in."
+}
